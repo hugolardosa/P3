@@ -4,6 +4,7 @@ package aula13.ex3;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class ListadeNomes {
@@ -32,8 +33,9 @@ public class ListadeNomes {
     }
 
     public String getRandomEmployee(){
-        int index = (int) Math.random()*nomes.size();
-        return nomes.get(index);
+        Random index = new Random();
+        int n = index.nextInt(nomes.size());
+        return nomes.get(n);
     }
 
     public ArrayList<String> getNomes() {

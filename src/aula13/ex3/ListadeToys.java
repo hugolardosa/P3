@@ -5,6 +5,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 public class ListadeToys {
     private ArrayList<String> nomes;
@@ -32,8 +33,9 @@ public class ListadeToys {
     }
 
     public String getRandomToy(){
-        int index = (int) Math.random()*nomes.size();
-        return nomes.get(index);
+        Random index = new Random();
+        int n = index.nextInt(nomes.size());
+        return nomes.get(n);
     }
 
     public void giveToyNames(ListadeNomes l){

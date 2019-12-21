@@ -1,17 +1,21 @@
 package aula13.ex3;
 
-import java.util.Objects;
-import java.util.TreeMap;
+import java.time.temporal.JulianFields;
+import java.util.*;
 
 public class NumberOfEmplooyes {
-    TreeMap<String, Integer> nomes;
+    private TreeMap<String, Integer> nomes;
+    private ArrayList<String> sorted;
 
     public NumberOfEmplooyes(TreeMap<String, Integer> nomes) {
         this.nomes = nomes;
+        this.sorted = new ArrayList<>();
     }
+
 
     public NumberOfEmplooyes() {
         this.nomes = new TreeMap<>();
+        this.sorted = new ArrayList<>();
     }
 
     public void addList(ListadeNomes n) {
@@ -22,6 +26,25 @@ public class NumberOfEmplooyes {
                 });
 
     }
+
+
+    private void sortedName() {
+        nomes.keySet().stream().forEach(f -> sorted.add(f));
+        Collections.sort(sorted, new Comparator<String>() {
+            @Override
+            public int compare(String t, String t1) {
+                return nomes.get(t1) - nomes.get(t);
+            }
+        });
+        System.out.println(sorted.toString());
+    }
+
+    public void fillToyList(ListadeToys l, int numt){
+        sortedName();
+        for (int i = 0; i<numt; i++){
+                l.addNome(sorted.get(i));
+            }
+        }
 
     public String getMorePopular() {
         int pop = Integer.MAX_VALUE;

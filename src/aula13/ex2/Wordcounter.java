@@ -26,7 +26,7 @@ public class Wordcounter {
         }
         for (String f : frases) {
             //fazemos o split das palavras
-            String[] words = f.split("[\t\n\\.\\,\\:\\'\\‘\\’\\;\\?\\!\\-\\*\\{\\}\\=\\+\\&\\/\\(\\)\\[\\]\\”\\“\\\\\"\\\\\'\\s]+");
+            String[] words = f.toLowerCase().split("[\t\n\\.\\,\\:\\'\\‘\\’\\;\\?\\!\\-\\*\\{\\}\\=\\+\\&\\/\\(\\)\\[\\]\\”\\“\\\\\"\\\\\'\\s]+");
             //criamos um novo array que so contem as palavras com tamanho superiror a 2 ou seja ignorar as maiores que 3
             String[] temp = Arrays.stream(words).filter(x -> x.length() > 2).collect(Collectors.toList()).toArray(new String[0]);
             System.out.println(Arrays.toString(temp));

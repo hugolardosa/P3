@@ -50,6 +50,10 @@ public class BrincaBeira {
         //=========================//
         NumberOfEmplooyes rank = new NumberOfEmplooyes();
         rank.addList(nomes);
+        ListadeToys novatoys = new ListadeToys();
+        rank.fillToyList(novatoys,4);
+        System.out.println("Teste de brinquedos: \n");
+        System.out.println(novatoys);
         rank.getMorePopular();
         rank.getPopularity("Luísa");
         System.out.println(rank);

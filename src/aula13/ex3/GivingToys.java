@@ -1,5 +1,7 @@
 package aula13.ex3;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Objects;
 import java.util.TreeMap;
 
@@ -27,6 +29,8 @@ public class GivingToys {
         }
     }
 
+
+
     public void addToytoRandom(ListadeNomes l, String toy) {
         String nome = l.getRandomEmployee();
         if (givetoys.containsKey(nome)) {
@@ -37,11 +41,12 @@ public class GivingToys {
     }
 
     public void addRandomToyRandomName(ListadeNomes l, ListadeToys t, int numberoftoys) {
+
         for (int i = 0; i<numberoftoys;i++) {
             String nome = l.getRandomEmployee();
             String toy = t.getRandomToy();
             if (givetoys.containsKey(nome)) {
-                givetoys.replace(nome, toy);
+                givetoys.put(nome, toy);
             } else {
                 givetoys.put(nome, toy);
             }
