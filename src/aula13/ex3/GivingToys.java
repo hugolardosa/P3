@@ -36,13 +36,15 @@ public class GivingToys {
         }
     }
 
-    public void addRandomToyRandomName(ListadeNomes l, ListadeToys t) {
-        String nome = l.getRandomEmployee();
-        String toy = t.getRandomToy();
-        if (givetoys.containsKey(nome)) {
-            givetoys.replace(nome, toy);
-        } else {
-            givetoys.put(nome, toy);
+    public void addRandomToyRandomName(ListadeNomes l, ListadeToys t, int numberoftoys) {
+        for (int i = 0; i<numberoftoys;i++) {
+            String nome = l.getRandomEmployee();
+            String toy = t.getRandomToy();
+            if (givetoys.containsKey(nome)) {
+                givetoys.replace(nome, toy);
+            } else {
+                givetoys.put(nome, toy);
+            }
         }
     }
 
@@ -97,7 +99,6 @@ public class GivingToys {
     public int hashCode() {
         return Objects.hash(givetoys);
     }
-
 
 
     @Override

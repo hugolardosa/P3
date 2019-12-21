@@ -37,7 +37,7 @@ public class ListadeToys {
     }
 
     public void giveToyNames(ListadeNomes l){
-        List<String> lista = l.getNamesList();
+        List<String> lista = l.getdiferentNamesList();
         lista.stream().forEach(f  -> nomes.add(f));
     }
 
