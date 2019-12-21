@@ -1,0 +1,7 @@
+Construa={programa=1}
+conte={todos=1}
+ficheiro={texto=1}
+leia={ficheiro=1}
+programa={leia=1}
+texto={conte=1}
+todos={pares=1}
