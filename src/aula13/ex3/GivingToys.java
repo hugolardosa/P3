@@ -46,25 +46,41 @@ public class GivingToys {
         }
     }
 
-    public boolean conatinsName(String nome){
+    public boolean conatinsName(String nome) {
         return givetoys.containsKey(nome);
     }
 
-    public boolean containsToy(String toy){
+    public boolean containsToy(String toy) {
         return givetoys.containsValue(toy);
     }
 
-    public boolean containsPair(String nome, String toy){
-        if(givetoys.containsKey(nome)){
-            if(givetoys.get(nome).equalsIgnoreCase(toy)){
+    public boolean containsPair(String nome, String toy) {
+        if (givetoys.containsKey(nome)) {
+            if (givetoys.get(nome).equalsIgnoreCase(toy)) {
                 return true;
-            }
-            else{
+            } else {
                 return false;
             }
 
+        } else {
+            return false;
         }
-        else{
+    }
+
+    public boolean removeNome(String nome) {
+        if (givetoys.containsKey(nome)) {
+            givetoys.remove(nome);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean removePair(String nome, String toy) {
+        if (givetoys.containsValue(toy)) {
+            givetoys.remove(nome, toy);
+            return true;
+        } else {
             return false;
         }
     }
@@ -81,6 +97,8 @@ public class GivingToys {
     public int hashCode() {
         return Objects.hash(givetoys);
     }
+
+
 
     @Override
     public String toString() {

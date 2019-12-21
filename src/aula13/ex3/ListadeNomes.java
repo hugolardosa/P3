@@ -2,7 +2,9 @@ package aula13.ex3;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class ListadeNomes {
     private ArrayList<String> nomes;
@@ -32,6 +34,14 @@ public class ListadeNomes {
     public String getRandomEmployee(){
         int index = (int) Math.random()*nomes.size();
         return nomes.get(index);
+    }
+
+    public ArrayList<String> getNomes() {
+        return nomes;
+    }
+
+    public List<String> getdiferentNamesList(){
+        return nomes.stream().distinct().collect(Collectors.toList());
     }
 
     @Override

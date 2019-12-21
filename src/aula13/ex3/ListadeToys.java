@@ -1,7 +1,9 @@
 package aula13.ex3;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class ListadeToys {
@@ -32,6 +34,11 @@ public class ListadeToys {
     public String getRandomToy(){
         int index = (int) Math.random()*nomes.size();
         return nomes.get(index);
+    }
+
+    public void giveToyNames(ListadeNomes l){
+        List<String> lista = l.getNamesList();
+        lista.stream().forEach(f  -> nomes.add(f));
     }
 
     @Override
